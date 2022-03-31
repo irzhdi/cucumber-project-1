@@ -1,6 +1,8 @@
 package com.juaracoding.cucumber4.utlis;
 
+
 import java.io.File;
+import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
@@ -11,7 +13,7 @@ import org.openqa.selenium.WebDriver;
 public class Utils {
 	public static int testCount = 0;
 
-	public static String getScreenshot(WebDriver driver, String screenshotName){
+	public static String getScreenshot(WebDriver driver, String screenshotName)throws IOException{
 		String dateName = new SimpleDateFormat("yyyyMMddhhmmss").format(new Date());
 		TakesScreenshot ts = (TakesScreenshot) driver;
 		File source = ts.getScreenshotAs(OutputType.FILE);
